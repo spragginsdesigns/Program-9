@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta name="description" content="Program 9 Assignment, IS30A, Area of a Rectangle">
+  <title>Program 9</title>
+  <!-- CSS HTML starts around line 95 or so-->
+  <style>
+    #main {
+      background-color: #455A6F;
+      border-radius: 3px;
+      padding: 10px;
+    }
+    
+    #header {
+      background-color: #292A2B;
+      border-radius: 3px;
+      padding: 10px;
+    }
+    
+    body {
+      text-align: center;
+      font-family: Montserrat;
+      color: #fff;
+    }
+    
+    a {
+      color: rgb(27, 157, 218);
+    }
+    
+    .btn1,
+    .btn2 {
+      background-color: rgba(52, 139, 221, 0.699);
+      border: #303436;
+      font-family: Montserrat;
+      font-size: 12px;
+      color: #fff;
+      letter-spacing: 2px;
+      padding: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 5px;
+      line-height: 3;
+      text-decoration: none;
+      box-shadow: 0 0 4px black;
+      text-shadow: 0 1px 0 black;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-shadow: 1px;
+      text-transform: capitalize;
+      text-align: center;
+    }
+    /* This is a custom snippet I made so the footer always stays at the bottom of the page */
+    
+    footer {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 2em;
+      background-color: transparent;
+      text-align: center;
+      border-color: rgb(0, 0, 0);
+      border-radius: 18px;
+      padding: 12px;
+      margin-top: 30em;
+      margin-bottom: 1em;
+    }
+    
+    .description {
+      font-style: italic;
+    }
+    
+    form {
+      border-radius: 25px;
+      padding: 5px;
+    }
+  </style>
+</head>
+<!-- HTML Body -->
+
+<body>
+  <div id="main">
+    <div id="header">
+      <h1>Program 9</h1>
+      <h5>Area or Perimeter</h5>
+      <h6>of a Rectangle</h6>
+    </div>
+    <!-- Main Form & Inputs For User Interaction -->
+    <form id="myForm">
+      <form id="myForm">
+        <label for="userInput1">Enter A for Area or P for Perimeter:</label><br><br>
+        <input type="text" id="apBox">
+        <br><br>
+        <label for="userInput2">Length:</label><br><br>
+        <input type="text" id="lengthBox"><br><br>
+        <label for="userInput3">Width:</label><br><br>
+        <input type="text" id="widthBox">
+      </form>
+      <!-- Empty Field & Message For User Who Interacted as well as Output: -->
+      <p id="demo">Output: </p>
+      <p id="message"> <br> </p>
+      <!-- Buttons For Submit & Clear Fields Above -->
+      <button class="btn1" type="button" onClick="controller()">Submit</button>
+      <button class="btn2" type="button" onClick="clearText()">Clear</button>
+  </div>
+  <footer>Created By <a href="http://www.spragginsdesigns.com" target="_BLANK">Austin Spraggins</a></footer>
+  <!-- JavaScript -->
+  <script type="text/javascript">
+    function controller() {
+      var type = document.getElementById("apBox").value;
+      var length = document.getElementById("lengthBox").value;
+      var width = document.getElementById("widthBox").value;
+      var mainSolution = document.getElementById("message");
+      var answer;
+      var label;
+      if (type == "a" || type == "A") {
+        answer = length * width;
+        label = 'Area';
+      } else if (type == "p" || type == "P") {
+        answer = 2 * length + 2 * width;
+        label = 'Perimiter';
+      } else {
+        mainSolution.innerText = "Invalid. Must Enter 'A' or 'P'";
+        return;
+      }
+      if (length.length > 0 && width.length > 0) {
+        if (!isNaN(answer)) {
+          mainSolution.innerHTML = `${label} =&nbsp ${answer}`;
+        }
+      } else {
+        mainSolution.innerHTML = "";
+      }
+    }
+
+
+    function clearText() {
+      document.getElementById("message").innerHTML = ("<br>");
+      document.getElementById("apBox").value = "";
+      document.getElementById("lengthBox").value = "";
+      document.getElementById("widthBox").value = "";
+    }
+  </script>
+  <!-- End JavaScript -->
+</body>
+<!-- End HTML -->
+
+</html>

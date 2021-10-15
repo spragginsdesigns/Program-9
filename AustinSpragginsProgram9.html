@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Program 9 Assignment, IS30A, Area of a Rectangle">
+  <title>Program 9</title>
+</head>
+<!-- HTML Body -->
+
+<body>
+  <div id="main">
+    <div id="header">
+      <h1>Program 9</h1>
+      <h5>Area or Perimeter</h5>
+      <h6>of a Rectangle</h6>
+    </div>
+    <!-- Main Form & Inputs For User Interaction -->
+    <form id="myForm">
+      <form id="myForm">
+        <label for="userInput1">Enter A for Area or P for Perimeter:</label><br><br>
+        <input type="text" id="apBox">
+        <br><br>
+        <label for="userInput2">Length:</label><br><br>
+        <input type="text" id="lengthBox"><br><br>
+        <label for="userInput3">Width:</label><br><br>
+        <input type="text" id="widthBox">
+      </form>
+      <!-- Empty Field & Message For User Who Interacted as well as Output: -->
+      <p id="demo">Output: </p>
+      <p id="message"> <br> </p>
+      <!-- Buttons For Submit & Clear Fields Above -->
+      <button class="btn1" type="button" onClick="controller()">Submit</button>
+      <button class="btn2" type="button" onClick="clearText()">Clear</button>
+  </div>
+  <footer>Created By <a href="http://www.spragginsdesigns.com" target="_BLANK">Austin Spraggins</a></footer>
+  <script type="text/javascript" src="controller.js"></script>
+</body>
+<!-- End HTML -->
+
+</html>
